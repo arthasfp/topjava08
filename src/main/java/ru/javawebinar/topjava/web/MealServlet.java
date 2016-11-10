@@ -5,7 +5,6 @@ package ru.javawebinar.topjava.web;
  */
 
 import org.slf4j.Logger;
-import ru.javawebinar.topjava.model.MealWithExceed;
 import ru.javawebinar.topjava.util.MealsUtil;
 
 import javax.servlet.ServletException;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -25,7 +22,7 @@ public class MealServlet extends HttpServlet {
         LOG.debug("redirect to mealList");
 
 
-        request.setAttribute("mealList", MealsUtil.getWithExceeded(MealsUtil.meals, MealsUtil.DEFAULT_CALORIES_PER_DAY));
+        request.setAttribute("mealList", MealsUtil.getWithExceeded(MealsUtil.USER_MEALs, MealsUtil.DEFAULT_CALORIES_PER_DAY));
         request.getRequestDispatcher("mealList.jsp").forward(request, response);
     }
 }
