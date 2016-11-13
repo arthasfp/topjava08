@@ -27,6 +27,7 @@
 <section>
     <h2><a href="index.html">Home</a></h2>
     <h3>Meal list</h3>
+    <a href="userMeals?action=create">Add meal</a>
     <hr>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
@@ -34,6 +35,8 @@
             <th>Date</th>
             <th>Description</th>
             <th>Calories</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <c:forEach items="${mealList}" var="userMeal">
@@ -46,6 +49,8 @@
                 </td>
                 <td>${userMeal.description}</td>
                 <td>${userMeal.calories}</td>
+                <td><a href="userMeals?action=update&id=${userMeal.id}">Update</a></td>
+                <td><a href="userMeals?action=delete&id=${userMeal.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

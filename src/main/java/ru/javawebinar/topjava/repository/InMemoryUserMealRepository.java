@@ -38,16 +38,16 @@ public class InMemoryUserMealRepository implements UserMealRepository {
 
     @Override
     public void delete(int id) {
-
+        repository.remove(id);
     }
 
     @Override
     public UserMeal get(int id) {
-        return null;
+        return repository.get(id);
     }
 
     @Override
     public Collection<UserMeal> getAll() {
-        return null;
+        return repository.values();
     }
 }
