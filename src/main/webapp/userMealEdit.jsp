@@ -30,7 +30,7 @@
     <h3>Edit meal</h3>
     <hr>
     <jsp:useBean id="userMeal" scope="request" type="ru.javawebinar.topjava.model.UserMeal"/>
-    <form method="post" action="userMeals">
+    <form method="post" action="userMeal">
         <input type="hidden" name="id" value="${userMeal.id}">
         <dl>
             <dt>Datetime:</dt>

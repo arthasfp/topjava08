@@ -55,7 +55,7 @@ public class MealServlet extends HttpServlet {
             int id = getId(request);
             LOG.info("Delete {}", id);
             repository.delete(id);
-            response.sendRedirect("userMeals");
+            response.sendRedirect("userMeal");
         }  else {
             final UserMeal userMeal = action.equals("create") ?
                     new UserMeal(LocalDateTime.now(), "", 1000) :
